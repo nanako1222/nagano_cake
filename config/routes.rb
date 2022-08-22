@@ -8,13 +8,16 @@ Rails.application.routes.draw do
   sessions: 'public/sessions'
 }
 
+get '/' => 'public/homes#top'
+get '/about' => 'public/homes#about'
+
   namespace :admin do
     get 'order_details/update'
-    resources :orders, only: [:update, :show]
+    resources :orders, only: [:update, :show, :index]
     resources :customers, only: [:update, :show, :index, :edit]
     resources :genres, only: [:update, :create, :index, :edit]
     resources :items, only: [:update, :create, :index, :edit, :new, :show]
-    get 'homes/top'
+    get '/' => 'homes#top'
     resources :sessions, only: [:destroy, :create, :new]
   end
 

@@ -4,4 +4,7 @@ class Admin::OrdersController < ApplicationController
 
   def update
   end
+
+  def index
+  end
 end
