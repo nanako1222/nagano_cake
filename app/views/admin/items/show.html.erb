@@ -1,0 +1,18 @@
+<div>
+  <h3><%= XXX.name %></h3>
+  <%= image_tag XXX.get_profile_image(100,100) %>
+</div>
+
+<!-- 管理者の投稿一覧 -->
+
+<% @post_images.each do |post_image| %>
+<div>
+  <%= link_to post_image_path(post_image.id) do %>
+    <%= image_tag post_image.get_image %>
+  <% end %>
+  <p>商品名：<%= post_image.name %></p>
+  <p>商品画像：<%= image_tag post_image.item.get_item_image(100,100) %></p>
+  <p>商品説明：<%= post_image.introduction %></p>
+  <p>税抜価格：<%= post_image.price %></p>
+</div>
+<% end %>

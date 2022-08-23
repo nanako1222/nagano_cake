@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
       customer_registration_path
     end
   end
+
+  def after_sign_out_path_for(resource)
+    admin_path
+  end
 end
