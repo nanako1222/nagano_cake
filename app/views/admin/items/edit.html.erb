@@ -1,0 +1,30 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+        <h5>商品編集</h5>
+        <%= form_with model: @item,url: admin_item_path(@item.id), method: :patch do |f| %>
+          <div class="form-group">
+            <label for="item_image">商品画像</label><br>
+            <%= f.file_field :image, accept: "image/*" %>
+          </div>
+          <div class = "form-group">
+            <label for ="item_name">商品名</label><br>
+            <%= f.text_field :name, class:"form-control name", id:"item_name" %>
+          </div>
+          <div class="form-group">
+            <label for="item_introduction">商品説明</label><br>
+            <%= f.text_area :introduction, class:"form-control name", id:"item_introduction" %>
+          </div>
+          <div class="form-group">
+            <label for="item_price">税抜価格</label><br>
+            <%= f.number_field :price, class:"form-control name d-grid gap-2 col-7" %>
+            <p>円</p>
+          </div>
+          <div class="form-group">
+            <%= f.submit '変更を保存', class:"btn btn-success" %>
+          </div>
+        <% end %><br>
+
+      </div>
+    </div>
+  </div>
