@@ -1,0 +1,29 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+
+    <div class="col-md-8 offset-md-1">
+      <table class="table table-hover table-inverse item-show">
+        <h5>商品詳細</h5>
+        <tr>
+          <td>
+            <% if @item.image.attached? %>
+              <%= image_tag @item.get_image(100,100) %>
+            <% else %>
+              <%= image_tag 'default-image.jpg', size: "100x100" %>
+            <% end %>
+          </td>
+          <td>
+            <P>商品名</P>
+            <p>商品説明</p>
+            <p>税抜価格</p>
+          </td>
+          <td>
+            <%= @item.name %><br>
+            <%= @item.introduction %><br>
+            <%= @item.price %><br>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>

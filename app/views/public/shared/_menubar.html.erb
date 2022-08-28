@@ -12,7 +12,7 @@
 
               <% if customer_signed_in? %>
                 <li>
-                  <%= link_to public_customer_path, class:"nav-link text-light" do %>
+                  <%= link_to public_customers_path, class:"nav-link text-light" do %>
                     マイページ
                   <% end %>
                 </li>
@@ -48,7 +48,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to new_public_registration_path, class:"nav-link text-light" do %>
+                  <%= link_to new_customer_registration_path, class:"nav-link text-light" do %>
                     新規登録
                   <% end %>
                 </li>
@@ -63,16 +63,3 @@
         </div>
       </nav>
     </header>
-
-    <%= yield %>
-
-    <footer class="bg-dark text-white pt-5 pb-4">
-      <div class="container">
-        <div class="row no-gutters">
-          <div class="col-md-8">
-
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>

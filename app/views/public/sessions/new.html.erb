@@ -2,7 +2,7 @@
 
 <p>会員の方はこちらからログイン</p>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_with model: @customer, url:customer_session_path, id: 'in_customer', class: 'in_customer', local: true do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "メールアドレス" %>
@@ -22,4 +22,4 @@
   <p>から新規登録を行ってください</p>
 <% end %>
 
-<!--<%= render "public/shared/links" %>-->
+<%= render "public/shared/links" %>

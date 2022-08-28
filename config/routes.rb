@@ -25,7 +25,7 @@ get '/about' => 'public/homes#about'
     resources :addresses, only: [:destroy, :update, :index, :edit, :create]
     resources :orders, only: [:new, :confirm, :index, :thanks, :create, :show]
     resources :cart_items, only: [:destroy, :update, :index, :destroy_all, :create]
-    resources :customers, only: [:out, :confirm, :update, :edit, :show]
+    resource :customers, only: [:out, :confirm, :update, :edit, :show]
     resources :sessions, only: [:destroy, :new, :create]
     resources :registrations, only: [:new, :create]
     resources :items, only: [:index, :show]
