@@ -1,5 +1,19 @@
-<!--<div class="header">-->
-<!--  <%= render 'public/shared/menubar' %>-->
-<!--</div>-->
+<p>ようこそ、ながのCAKEへ！<br>
+このサイトは、ケーキ販売のECサイトになります。<br>
+会員でない方も商品の閲覧はできますが、<br>
+購入には会員登録が必要になります。</p>
 
-<h1>トップページ</h1>
+  <h2>新着商品</h2>
+    <% @items.each do |item| %>
+      <tr>
+        <td>
+          <% if @item.image.attached? %>
+            <%= image_tag @item.get_image(100,100) %>
+          <% else %>
+            <%= image_tag 'default-image.jpg', size: "100x100" %>
+          <% end %>
+        </td>
+        <td><%= link_to item.name, public_item_path(item.id) %></td><br>
+        <td><%= "¥#{item.price}" %>
+      </tr>
+    <% end %>
