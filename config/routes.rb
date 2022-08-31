@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   sessions: 'public/sessions'
 }
 
-get '/' => 'public/homes#top'
+# get '/' => 'public/homes#top'
+root :to  => 'public/homes#top'
 get '/about' => 'public/homes#about'
 
   namespace :admin do
@@ -29,7 +30,7 @@ get '/about' => 'public/homes#about'
     resources :sessions, only: [:destroy, :new, :create]
     resources :registrations, only: [:new, :create]
     resources :items, only: [:index, :show]
-    resources :homes, only: [:top, :about]
+    # resources :homes, only: [:top, :about]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
