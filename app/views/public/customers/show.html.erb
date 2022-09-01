@@ -3,20 +3,20 @@
     <tr>
       <h2>マイページ</h2>
       <div>
-        <%= link_to "編集する", edit_admin_item_path(@customer), class:"btn btn-success"%>
+        <%= link_to "編集する", edit_public_customers_path(@customer), class:"btn btn-success"%>
       </div>
     </tr>
     <tr>
       <th>氏名</th>
-      <td><%= current_customer.full_name %></td>
+      <td><%= @customer.full_name %></td>
     </tr>
     <tr>
       <th>カナ</th>
-      <td><%= current_customer.full_name_kana %></td>
+      <td><%= @customer.full_name_kana %></td>
     </tr>
     <tr>
       <th>郵便番号</th>
-      <td><%= @customer.postal_code %></td>
+      <td><%= @customer.postal_code%></td>
     </tr>
     <tr>
       <th>住所</th>
