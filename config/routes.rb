@@ -29,8 +29,10 @@ get '/about' => 'public/homes#about'
     get "/orders/thanks" => "orders#thanks"
     resources :cart_items, only: [:destroy, :update, :index, :create]
     get "/cart_items/destroy_all" => "cart_items#destroy_all"
-    resource :customers, only: [:out, :confirm, :update, :edit, :show]
-     get "/customers/confirm" => "customers#confirm"
+    resource :customers, only: [:update, :edit]
+    get "/customers/my_page" => "customers#show"
+    get "/customers/confirm" => "customers#confirm"
+    patch '/customers/out' => 'customers#out'
     resources :sessions, only: [:destroy, :new, :create]
     resources :registrations, only: [:new, :create]
     resources :items, only: [:index, :show]

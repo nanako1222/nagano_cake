@@ -17,9 +17,14 @@ class Public::CustomersController < ApplicationController
   end
 
   def confirm
+    @customer = current_customer
   end
 
   def out
+    @customer = current_customer
+    @customer.update(is_valid: false)
+    reset_session
+    redirect_to root_path
   end
 
   private

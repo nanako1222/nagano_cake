@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     # byebug binding.pry
     if resource == :admin
-　　　　admin_path
+      admin_path
     elsif resource == :customer
       root_path
     end

@@ -1,1 +1,28 @@
-<h1>ショッピングカート</h1>
+<div class="col-md-8 offset-md-1">
+  <table class="table table-hover table-inverse cart_item-index">
+    <h2>ショッピングカート</h2>
+    <div>
+      <%= link_to "カートを空にする", public_cart_items_path(@cart_item), class:"btn btn-danger"%>
+    </div>
+    <thead>
+      <th>商品名</th>
+      <th>単価(税込)</th>
+      <th>数量</th>
+      <th>小計</th>
+    </thead>
+    <tbody>
+    <% @cart_items.each do |cart_item| %>
+        <tr>
+          <td><%= cart_item.item.name %></td>
+          <td><%= cart_item.item.with_tax_price%></td>
+          <td>
+            <%= cart_item.subtotal%>
+            <%= link_to "変更", public_cart_items_path(@cart_item), class:"btn btn-success"%>
+          </td>
+          <% @cart_items +=  cart_item.subtotal %>
+          <%= link_to "削除する", public_cart_item_path(@cart_item), class:"btn btn-danger"%>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

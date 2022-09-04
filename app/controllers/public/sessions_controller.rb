@@ -24,7 +24,7 @@ class Public::SessionsController < Devise::SessionsController
       # byebug
       @customer = Customer.find_by(email: params[:customer][:email])
       if @customer
-        if @customer.valid_password?(params[:customer][:password]) && !@customer.is_active
+        if @customer.valid_password?(params[:customer][:password]) && !@customer.is_valid
           redirect_to new_user_session_path
         # else
         #   redirect_to root_path
