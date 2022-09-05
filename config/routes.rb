@@ -27,8 +27,8 @@ get '/about' => 'public/homes#about'
     resources :orders, only: [:new, :index, :create, :show]
     get "/orders/confirm" => "orders#confirm"
     get "/orders/thanks" => "orders#thanks"
+    delete "/cart_items/destroy_all" => "cart_items#destroy_all"
     resources :cart_items, only: [:destroy, :update, :index, :create]
-    get "/cart_items/destroy_all" => "cart_items#destroy_all"
     resource :customers, only: [:update, :edit]
     get "/customers/my_page" => "customers#show"
     get "/customers/confirm" => "customers#confirm"
