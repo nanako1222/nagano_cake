@@ -7,11 +7,11 @@ class Public::OrdersController < ApplicationController
   def confirm
     @order = Order.new(order_params)
     @order.save
-    if params[:order][:address_option] == "0"
+    if params[:order][:address_method] == "own_address"
       @order.postal_code = current_customer.postal_code
       @order.address = current_customer.address
       @order.name = current_customer.full_name
-    elsif params[:order][:address_option] = "1"
+    elsif params[:order][:address_method] == "new_address"
       @order.postal_code = params[:order][:postal_code]
       @order.address = params[:order][:address]
       @order.name = params[:order][:name]
@@ -33,11 +33,11 @@ class Public::OrdersController < ApplicationController
     @order.customer_id = current_customer.id
     @order.save
     current_customer.cart_items.each do |cart_item|
-      @ordered_item = OrderedItem.new
+      @ordered_item = OrderDetail.new
       @ordered_item.order_id =  @order.id
       @ordered_item.item_id = cart_item.item_id
       @ordered_item.amount = cart_item.amount
-      @ordered_item.tax_included_price = cart_item.item.with_tax_price
+      @ordered_item.price = cart_item.item.with_tax_price
       @ordered_item.save
     end
       current_customer.cart_items.destroy_all
@@ -49,14 +49,13 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
-    @ordered_items = @order.ordered_items
+    # @order = Order.find(params[:id])
+    # @ordered_items = @order.ordered_items
   end
 
   private
     def order_params
-        params.require(:order).permit(:carriage, :payment, :name, :address, :postal_code ,:customer_id,:total_price)
+        params.require(:order).permit(:payment_method, :carriage, :payment, :name, :address, :postal_code ,:customer_id,:total_price)
     end
-    private
 
 end
