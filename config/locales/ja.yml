@@ -4,3 +4,7 @@
         payment_method:
           credit_card: "クレジットカード"
           transfer: "銀行振込"
+
+        address_method:
+          own_address: "ご自身の住所"
+          new_address: "新しいお届け先"

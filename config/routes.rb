@@ -25,7 +25,7 @@ get '/about' => 'public/homes#about'
   namespace :public do
     resources :addresses, only: [:destroy, :update, :index, :edit, :create]
     resources :orders, only: [:new, :index, :create, :show]
-    get "/orders/confirm" => "orders#confirm"
+    post "/orders/confirm" => "orders#confirm"
     get "/orders/thanks" => "orders#thanks"
     delete "/cart_items/destroy_all" => "cart_items#destroy_all"
     resources :cart_items, only: [:destroy, :update, :index, :create]

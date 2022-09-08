@@ -16,8 +16,11 @@
           <td><%= cart_item.item.name %></td>
           <td><%= cart_item.item.with_tax_price%></td>
           <td>
-            <%= cart_item.amount %>
-            <%= link_to "変更", public_cart_items_path(cart_item), class:"btn btn-success"%>
+            <%= form_with model: cart_item, url:public_cart_item_path(cart_item), method: :patch do |f| %>
+              <%= f.select :amount, *[1..10], class: "form-select amount" %>
+              <%= f.hidden_field :item_id, :value => cart_item.item_id %>
+              <%= f.submit '変更', class:"btn btn-success" %>
+            <% end %>
           </td>
           <td><%= cart_item.subtotal%></td>
           <td><%= link_to "削除する", public_cart_item_path(cart_item), method: :delete, class:"btn btn-danger"%></td>
@@ -27,5 +30,12 @@
     </tbody>
   </table>
 
-  <%= "#{@cart_total}円" %>
+  <table class="table table-hover table-inverse cart_item-index">
+    <tr>
+      <th>合計金額</th>
+      <td><%= "#{@cart_total}円" %></td>
+    </tr>
+  </table>
+  <%= link_to "買い物を続ける", root_path, class:"btn btn-primary"%>
+  <%= link_to "情報入力に進む", new_public_order_path, class:"btn btn-success"%>
 </div>
