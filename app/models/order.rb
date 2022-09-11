@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   has_one_attached :image
 
-  enum payment_method: { credit_card: 0, transfer: 1 }
+  enum payment: { credit_card: 0, transfer: 1 }
   enum address_method: { own_address: 0, new_address: 1 }
 
   belongs_to :customer

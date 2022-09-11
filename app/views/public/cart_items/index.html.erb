@@ -11,22 +11,23 @@
       <th>小計</th>
     </thead>
     <tbody>
-    <% @cart_items.each do |cart_item| %>
-        <tr>
-          <td><%= cart_item.item.name %></td>
-          <td><%= cart_item.item.with_tax_price%></td>
-          <td>
-            <%= form_with model: cart_item, url:public_cart_item_path(cart_item), method: :patch do |f| %>
-              <%= f.select :amount, *[1..10], class: "form-select amount" %>
-              <%= f.hidden_field :item_id, :value => cart_item.item_id %>
-              <%= f.submit '変更', class:"btn btn-success" %>
-            <% end %>
-          </td>
-          <td><%= cart_item.subtotal%></td>
-          <td><%= link_to "削除する", public_cart_item_path(cart_item), method: :delete, class:"btn btn-danger"%></td>
-          <% @cart_total +=  cart_item.subtotal %>
-      </tr>
-    <% end %>
+      <% @cart_items.each do |cart_item| %>
+          <tr>
+            <td><%= cart_item.item.name %></td>
+            <td><%= cart_item.item.with_tax_price %></td>
+            <td>
+              <%= form_with model: cart_item, url:public_cart_item_path(cart_item), method: :patch do |f| %>
+                <%= f.select :amount, *[1..10], class: "form-select amount" %>
+                <%= f.hidden_field :item_id, :value => cart_item.item_id %>
+                <%= f.submit '変更', class:"btn btn-success" %>
+              <% end %>
+            </td>
+            <td><%= cart_item.subtotal%></td>
+            <td><%= link_to "削除する", public_cart_item_path(cart_item), method: :delete, class:"btn btn-danger"%></td>
+            <% @cart_total +=  cart_item.subtotal %>
+        </tr>
+      <% end %>
+      <%= paginate @cart_images %>
     </tbody>
   </table>
 

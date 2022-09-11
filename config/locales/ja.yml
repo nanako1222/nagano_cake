@@ -1,10 +1,18 @@
  ja:
     enums:
       order:
-        payment_method:
+        payment:
           credit_card: "クレジットカード"
           transfer: "銀行振込"
 
         address_method:
           own_address: "ご自身の住所"
           new_address: "新しいお届け先"
+          
+    views:
+      pagination:
+        first: "&laquo; 最初"
+        last: "最後 &raquo;"
+        previous: "&lsaquo; 前"
+        next: "次 &rsaquo;"
+        truncate: "..."
