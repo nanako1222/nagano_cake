@@ -2,7 +2,7 @@
   <table class="table table-hover table-inverse cart_item-index">
     <h2>ショッピングカート</h2>
     <div>
-      <%= link_to "カートを空にする", public_cart_items_destroy_all_path(@cart_item), method: :delete, class:"btn btn-danger"%>
+      <%= link_to "カートを空にする", cart_items_destroy_all_path(@cart_item), method: :delete, class:"btn btn-danger"%>
     </div>
     <thead>
       <th>商品名</th>
@@ -16,18 +16,17 @@
             <td><%= cart_item.item.name %></td>
             <td><%= cart_item.item.with_tax_price %></td>
             <td>
-              <%= form_with model: cart_item, url:public_cart_item_path(cart_item), method: :patch do |f| %>
+              <%= form_with model: cart_item, url:cart_item_path(cart_item), method: :patch do |f| %>
                 <%= f.select :amount, *[1..10], class: "form-select amount" %>
                 <%= f.hidden_field :item_id, :value => cart_item.item_id %>
                 <%= f.submit '変更', class:"btn btn-success" %>
               <% end %>
             </td>
             <td><%= cart_item.subtotal%></td>
-            <td><%= link_to "削除する", public_cart_item_path(cart_item), method: :delete, class:"btn btn-danger"%></td>
+            <td><%= link_to "削除する", cart_item_path(cart_item), method: :delete, class:"btn btn-danger"%></td>
             <% @cart_total +=  cart_item.subtotal %>
         </tr>
       <% end %>
-      <%= paginate @cart_images %>
     </tbody>
   </table>
 
@@ -38,5 +37,5 @@
     </tr>
   </table>
   <%= link_to "買い物を続ける", root_path, class:"btn btn-primary"%>
-  <%= link_to "情報入力に進む", new_public_order_path, class:"btn btn-success"%>
+  <%= link_to "情報入力に進む", new_order_path, class:"btn btn-success"%>
 </div>

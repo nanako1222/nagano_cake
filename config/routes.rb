@@ -22,14 +22,16 @@ get '/about' => 'public/homes#about'
     resources :sessions, only: [:destroy, :create, :new]
   end
 
-  namespace :public do
+  scope module: :public do
     resources :addresses, only: [:destroy, :update, :index, :edit, :create]
     get "/orders/thanks" => "orders#thanks"
     resources :orders, only: [:new, :index, :create, :show]
     post "/orders/confirm" => "orders#confirm"
     delete "/cart_items/destroy_all" => "cart_items#destroy_all"
     resources :cart_items, only: [:destroy, :update, :index, :create]
-    resource :customers, only: [:update, :edit]
+    # resource :customers, only: [:update, :edit]
+    patch "/customers/information" => "customers#update"
+    get "/customers/information/edit" => "customers#edit"
     get "/customers/my_page" => "customers#show"
     get "/customers/confirm" => "customers#confirm"
     patch '/customers/out' => 'customers#out'
@@ -37,6 +39,7 @@ get '/about' => 'public/homes#about'
     resources :registrations, only: [:new, :create]
     resources :items, only: [:index, :show]
   end
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

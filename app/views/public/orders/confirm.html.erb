@@ -70,7 +70,7 @@
   </div>
 
   <div class="row justify-content-center">
-    <%= form_with model: @order, url: public_orders_path, method: :post, local: true do |f| %>
+    <%= form_with model: @order, url: orders_path, method: :post, local: true do |f| %>
       <%= f.hidden_field :customer_id, :value => @order.customer_id %>
       <%= f.hidden_field :carriage, :value => @order.carriage %>
       <%= f.hidden_field :total_price, :value => @cart_total %>
