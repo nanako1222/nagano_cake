@@ -1,9 +1,9 @@
-<div class="container px-5 px-sm-0">
+<div class="container">
   <div class="row">
-    <div class="col-8 offset-md-1">
-      <table class="table table-striped table-responsive item-index">
-        <h5>商品一覧</h5>
-        <thead>
+    <div class="col-10 offset-1">
+      <h4 class="col-2 mt-5">商品一覧</h4>
+      <table class="table table-hover mt-4">
+        <thead class="table-secondary">
           <th>商品ID</th>
           <th>商品名</th>
           <th>税抜価格</th>
@@ -16,9 +16,11 @@
               <td><%= "#{item.price}円" %></td>
             </tr>
           <% end %>
-          <%= paginate @items %>
         </tbody>
       </table>
+      <div class = "text-center">
+        <p><%= paginate @items %></p>
+      </div>
     </div>
   </div>
 </div>

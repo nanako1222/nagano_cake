@@ -5,12 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
-
+<div class="wrapper">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
 
 
@@ -122,14 +122,11 @@
       </nav>
     </header>
 
-  <%= yield %>
+    <%= yield %>
 
-  <footer class="bg-dark pt-5 pb-4">
-    <div class="container">
-      <div class="rows">
-      </div>
-    </div>
-  </footer>
-
+    <footer class="pt-5 pb-4">
+      <p class="text-center">(c)copy right</p>
+    </footer>
+  </div>
 </html>
 

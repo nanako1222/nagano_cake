@@ -1,28 +1,34 @@
 <div class="container">
   <div class="row">
-    <div class="mx-auto col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0">
-      <h5><strong>商品新規登録</strong></h5>
+    <div class='col-10 offset-2'>
+      <div class="row">
+        <h4 class="col-3 mt-5">商品新規登録</h4>
+      </div>
 
       <%= form_with model: @item, url: admin_items_path, id: 'new_item', class: 'new_item' do |f| %>
-      　<div class="form-group">
-          <label for="item_image">商品画像</label><br>
-          <%= f.file_field :image, accept: "image/*" %>
+
+        <div class="row field d-grid text-center mt-4">
+          <%= f.label :商品画像, class: "col-md-2" %>
+          <%= f.file_field :image, accept: "image/*", class: "col-md-6" %>
         </div>
-        <div class="form-group">
-          <label for="item_name">商品名</label><br>
-          <%= f.text_field :name, class:"form-control name" %>
+
+        <div class="row field d-grid text-center mt-3">
+          <%= f.label :商品名, class: "col-md-2" %>
+          <%= f.text_field :name, class: "col-md-6" %>
         </div>
-        <div class="form-group">
-          <label for="item_introduction">商品説明</label><br>
-          <%= f.text_area :introduction, class:"form-control name" %>
+
+        <div class="row field d-grid text-center mt-3">
+          <%= f.label :商品説明, class: "col-md-2" %>
+          <%= f.text_area :introduction, class: "col-md-6" %>
         </div>
-        <div class="form-group">
-          <label for="item_price">税抜価格</label><br>
-          <%= f.number_field :price, class:"form-control name d-grid gap-2 col-7" %>
-          <p>円</p>
+
+        <div class="row field d-grid text-center mt-3">
+          <%= f.label :税抜価格, class: "col-md-2" %>
+          <%= f.number_field :price, class: "col-md-6" %>円
         </div>
-        <div class="form-group">
-          <%= f.submit '新規登録', class:"btn btn-success" %>
+
+        <div class="row form-group mt-4 ml-40">
+          <%= f.submit '新規登録', class:"btn btn-success col-2" %>
         </div>
       <% end %>
     </div>

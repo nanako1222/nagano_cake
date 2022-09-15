@@ -14,3 +14,55 @@
  *= require_self
  */
 
+h4 {
+  color: maroon;
+  border-radius: 4px;
+  background-color: #faebd7 ;
+}
+
+.table-secondary {
+  background-color: #ffffe0 ;
+}
+
+th {
+  color: #cd853f;
+}
+
+.navbar-expand-lg {
+  background-color: #a0522d ;
+}
+
+.wrapper{
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #a0522d ;
+  width: 100% ;
+  position: absolute;
+  bottom: 0;
+  color: white ;
+}
+
+.actions {
+  margin-left: 32%;
+}
+
+.ml-40 {
+  padding-left: 35%;
+}
+
+.customer_edit {
+  padding-left: 15%;
+}
+
+.customer_index{
+  padding-left: 10%;
+}
+
+.customer_show{
+  margin-bottom: 40px;
+}

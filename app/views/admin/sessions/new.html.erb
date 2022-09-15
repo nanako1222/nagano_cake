@@ -1,19 +1,20 @@
 
 <div class="container">
   <div class="row">
-    <div class="mx-auto col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0">
+    <div class='col-10 offset-1'>
+      <h4 class="col-3 mt-5"><strong>管理者</strong>ログイン</h4>
 
-      <h5><strong>管理者</strong>ログイン</h5>
 
         <%= form_with model: @admin, url: admin_session_path do |f| %>
-          <div class="field d-grid gap-2 col-7 mx-auto">
-            <%= f.label :メールアドレス %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+          <div class="field d-grid col-8 text-center mt-4">
+            <%= f.label :メールアドレス, class: "w-25" %>
+            <%= f.email_field :email, class: "col-6" %>
           </div>
 
-          <div class="field d-grid gap-2 col-7 mx-auto">
-            <%= f.label :パスワード %>
-            <%= f.password_field :password, autocomplete: "current-password" %>
+          <div class="field d-grid col-8 text-center">
+            <%= f.label :パスワード, class: "w-25" %>
+            <%= f.password_field :password, class: "col-6" %>
           </div>
 
           <!--<% if devise_mapping.rememberable? %>-->
@@ -23,8 +24,8 @@
           <!--  </div>-->
           <!--<% end %>-->
 
-          <div class="actions text-center">
-            <input type="submit" name="commit" value="ログイン" class="btn btn-sm btn-info d-grid gap-2 col-3" data-disable-with="Log in">
+          <div class="actions mt-4">
+            <input type="submit" name="commit" value="ログイン" class="btn btn-sm btn-info col-3" data-disable-with="Log in">
           </div>
         <% end %>
 
