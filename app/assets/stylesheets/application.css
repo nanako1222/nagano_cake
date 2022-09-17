@@ -29,7 +29,7 @@ th {
 }
 
 .navbar-expand-lg {
-  background-color: #a0522d ;
+  background-color: #556b2f ;
 }
 
 .wrapper{
@@ -40,10 +40,8 @@ th {
 }
 
 footer {
-  background-color: #a0522d ;
+  background-color: #556b2f ;
   width: 100% ;
-  position: absolute;
-  bottom: 0;
   color: white ;
 }
 
@@ -69,4 +67,28 @@ footer {
 
 .customer_show{
   margin-bottom: 40px;
+}
+
+.title_image{
+  width: 100%;
+  height: 80%;
+  background-image: url('title_image.jpeg');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.title_image2{
+  width: 45%;
+  height: 100%;
+  background-color: rgba( 0, 0, 0, 0.5);
+  color: white;
+  margin: 0;
+}
+
+p {
+  padding: 10px;
+}
+
+.wrapper{
+  margin-bottom: 10%;
 }

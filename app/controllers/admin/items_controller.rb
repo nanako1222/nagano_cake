@@ -25,6 +25,11 @@ class Admin::ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to admin_item_path(@item.id), notice: 'You have updated book successfully.'
+    else
+      render :edit
+    end
   end
 
   private
