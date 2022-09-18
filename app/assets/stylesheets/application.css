@@ -14,10 +14,18 @@
  *= require_self
  */
 
-h4 {
+h4, h6 {
   color: maroon;
   border-radius: 4px;
-  background-color: #faebd7 ;
+  background-color: #d8e698 ;
+}
+
+h1{
+  color: maroon;
+}
+
+.about{
+  color: maroon;
 }
 
 .table-secondary {
@@ -90,5 +98,17 @@ p {
 }
 
 .wrapper{
-  margin-bottom: 10%;
+  margin-bottom: 15%;
+}
+
+.price{
+  font-size: 20px;
+}
+
+.item_show{
+  margin-left: 40px;
+}
+
+.tanks_page{
+  height: 700px;
 }

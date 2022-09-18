@@ -1,18 +1,21 @@
-<div "container">
-  <div class='row mb-3'>
-    <div class='col-8 offset-1'>
-      <h4>注文情報確認</h4>
+<div class="container">
+  <div class="row">
+    <div class="col-10 offset-1">
+      <h4 class="col-3 mt-5">注文情報確認</h4>
+
     </div>
   </div>
   <div class='row'>
-    <div class='col-7 offset-1'>
+    <div class='col-7 offset-1 mt-4'>
       <table class='table table-bordered border-dark'>
-        <tr class="table-secondary">
-          <th>商品名</th>
-          <th>単価(税込)</th>
-          <th>数量</th>
-          <th>小計</th>
-        </tr>
+        <thead class="table-secondary">
+          <tr>
+            <th>商品名</th>
+            <th>単価(税込)</th>
+            <th>数量</th>
+            <th>小計</th>
+          </tr>
+        </thead>
         <% @cart_items.each do |cart_item| %>
           <tr>
             <td>
@@ -32,7 +35,7 @@
       </table>
     </div>
 
-    <div class='col-3'>
+    <div class='col-3 mt-4'>
       <table class="table table-bordered border-dark">
         <tr>
           <th>送料</th>

@@ -1,13 +1,13 @@
-<div "container">
+<div class= "container">
   <div class='row mb-3'>
-    <div class='col-8 offset-1'>
-      <h2>注文履歴詳細画面</h2>
+    <div class='col-10 offset-1'>
+      <h4 class="col-md-3 mt-5">注文履歴詳細画面</h4>
     </div>
   </div>
   <div class='row'>
-    <div class='col-7 offset-1'>
+    <div class='col-7 offset-1 mt-4'>
+      <h5 class="col-3">注文情報</h5>
       <table class='table table-bordered border-dark'>
-        <h4>注文情報</h4>
         <tr>
         　<th>注文日</th>
         　<td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
@@ -27,9 +27,9 @@
       </table>
     </div>
 
-    <div class='col-3'>
-      <table class="table table-bordered border-dark">
-        <h4>請求情報</h4>
+    <div class='col-3 mt-4'>
+      <h5 class="col-6">請求情報</h5>
+      <table class="title_order table table-bordered border-dark mt-2">
         <tr>
           <th>商品合計</th>
           <td><%= "#{@order.total_price}円" %></td>
@@ -48,14 +48,16 @@
 
   <div class="row">
     <div class='col-8 offset-1'>
-      <table class="table table-hover table-bordered">
-        <tr class="table-secondary">
-          <h4>注文内容</h4>
-          <th>商品</th>
-          <th>単価（税込）</th>
-          <th>個数</th>
-          <th>小計</th>
-        </tr>
+      <h5 class="col-2 mt-5">注文内容</h5>
+      <table class="table table-bordered mt-2">
+        <thead class="table-secondary">
+          <tr>
+            <th>商品</th>
+            <th>単価（税込）</th>
+            <th>個数</th>
+            <th>小計</th>
+          </tr>
+        </thead>
         <% @order.order_details.each do |order_detail| %>
           <tr>
             <td><%= order_detail.item.name %></td>

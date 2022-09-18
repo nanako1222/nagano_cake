@@ -10,7 +10,7 @@ class Public::CustomersController < ApplicationController
   def update
     @customer = current_customer
     if @customer.update(customer_params)
-      redirect_to customers_path, notice: 'You have updated book successfully.'
+      redirect_to customers_confirm_path, notice: 'You have updated book successfully.'
     else
       render :edit
     end
