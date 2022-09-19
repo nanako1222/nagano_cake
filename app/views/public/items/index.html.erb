@@ -1,22 +1,26 @@
-<div class="col-8 offset-md-1 mx-au">
-    <div class="item-index">
-      <h2>商品一覧</h2>
-
-        <% @items.each do |item| %>
-          <tr>
-            <td>
+<div class="container">
+  <div class="row">
+    <div class="col-10 offset-1">
+      <div class ="row mt-5">
+        <h4 class="col-3"><p class="p_1">商品一覧 <span style="font-size: 15px"><%= "(全#{@item_count}件)"%></span></p></h4>
+      </div>
+        <div class = "row mt-4">
+          <% @items.each do |item| %>
+          <div class="col-4">
+            <p class ="p_1">
               <% if item.image.attached? %>
                 <%= image_tag item.get_image(100,100) %>
               <% else %>
                 <%= image_tag 'default-image.jpg', size: "100x100" %>
               <% end %>
-            </td>
+            </p>
+            <p class ="p_1"><%= link_to item.name, item_path(item.id) %></p>
+            <p class ="p_1"><%= "¥#{item.price}" %></p>
+            </div>
+          <% end %>
+        </div>
 
-            <td><%= link_to item.name, item_path(item.id) %></td>
-            <td><%= "¥#{item.price}" %></td>
-          </tr>
-        <% end %>
-        <%= paginate @items %>
+        <div class="mt-3"><%= paginate @items %></div>
 
     </div>
   </div>

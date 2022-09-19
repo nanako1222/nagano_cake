@@ -3,9 +3,11 @@
     <div class='col-10 offset-1'>
 
       <table class="table table-hover table-bordered table-inverse cart_item-index">
-        <div>
-          <h4 class="col-md-3 mt-5">ショッピングカート</h4>
-          <%= link_to "カートを空にする", cart_items_destroy_all_path(@cart_item), method: :delete, class:"btn btn-danger"%>
+        <div class="row  mt-5">
+          <h4 class="col-4">ショッピングカート</h4>
+          <span class="ml-5">
+            <%= link_to "カートを空にする", cart_items_destroy_all_path(@cart_item), method: :delete, class:"btn btn-danger"%>
+          </span>
         </div>
         <div class ="mt-4">
           <thead class = "table-secondary">

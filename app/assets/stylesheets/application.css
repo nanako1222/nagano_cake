@@ -93,10 +93,6 @@ footer {
   margin: 0;
 }
 
-p {
-  padding: 10px;
-}
-
 .wrapper{
   margin-bottom: 15%;
 }
@@ -112,3 +108,8 @@ p {
 .tanks_page{
   height: 700px;
 }
+
+.p_1{
+  margin-bottom: 0;
+}
+

@@ -5,6 +5,15 @@
         <h4 class="col-3 mt-5">商品新規登録</h4>
       </div>
 
+      <% if @item.errors.any? %>
+        <%= @item.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @item.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
       <%= form_with model: @item, url: admin_items_path, id: 'new_item', class: 'new_item' do |f| %>
 
         <div class="row field d-grid text-center mt-4">

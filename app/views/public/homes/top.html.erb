@@ -3,7 +3,7 @@
     <div class="col-md-10 offset-1">
       <div class="title_image">
         <div class="row title_image2 align-items-end">
-          <p>ようこそ、ながのCAKEへ！<br>
+          <p class="ml-3">ようこそ、ながのCAKEへ！<br>
           このサイトは、ケーキ販売のECサイトになります。<br>
           会員でない方も商品の閲覧はできますが、<br>
           購入には会員登録が必要になります。</p>
@@ -11,19 +11,21 @@
       </div>
 
       <h4 class="col-md-2 mt-5">新着商品</h4>
-      <table class="mt-3">
-        <% @items.each do |item| %>
-            <td>
-              <% if item.image.attached? %>
-                <%= image_tag item.get_image(100,100) %>
-              <% else %>
-                <%= image_tag 'default-image.jpg', size: "100x100" %>
-              <% end %>
-            </td>
-            <td><%= link_to item.name, item_path(item.id) %></td>
-            <td><%= "¥#{item.price}" %>
-        <% end %>
-      </table>
+      <div class = "row mt-4">
+          <% @items.each do |item| %>
+            <div class="col-3">
+              <p class ="p_1">
+                <% if item.image.attached? %>
+                  <%= image_tag item.get_image(100,100) %>
+                <% else %>
+                  <%= image_tag 'default-image.jpg', size: "100x100" %>
+                <% end %>
+              </p>
+              <p class ="p_1"><%= link_to item.name, item_path(item.id) %></p>
+              <p class ="p_1"><%= "¥#{item.price}" %></p>
+            </div>
+          <% end %>
+        </div>
       <div class="item_link text-right">
         <%= link_to "全ての商品を見る>", items_path %>
       </div>

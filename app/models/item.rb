@@ -4,6 +4,10 @@ class Item < ApplicationRecord
   has_many :order_details, dependent: :destroy
   has_many :cart_items, dependent: :destroy
 
+  validates :price, presence: true
+  validates :name, presence: true
+  validates :introduction, presence: true
+
   def get_image(width, height)
     unless image.attached?
       file_path = Rails.root.join('app/assets/images/default-image.jpg')

@@ -1,4 +1,5 @@
 class Public::CustomersController < ApplicationController
+  before_action :current_customer, {only: [:show, :edit]}
   def show
     @customer = current_customer
   end
@@ -10,7 +11,7 @@ class Public::CustomersController < ApplicationController
   def update
     @customer = current_customer
     if @customer.update(customer_params)
-      redirect_to customers_confirm_path, notice: 'You have updated book successfully.'
+      redirect_to customers_confirm_path
     else
       render :edit
     end
