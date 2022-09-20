@@ -16,7 +16,7 @@
 
           <% if customer_signed_in? %>
           　<a class="navbar-brand" href="/">
-              <%= image_tag('sweets_logo.jpg') %>
+              <%= image_tag('logo.png') %>
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -25,26 +25,31 @@
               <ul class="navbar-nav ml-auto">
                 <li>
                   <%= link_to customers_my_page_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-user"></i>
                     <strong>マイページ</strong>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to items_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-birthday-cake"></i>
                     <strong>商品一覧</strong>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to cart_items_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-shopping-cart"></i>
                     <strong>カート</strong>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to orders_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-history"></i>
                     <strong>注文履歴一覧</strong>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to destroy_customer_session_path, method: :delete, class:"nav-link text-light" do %>
+                    <i class="fas fa-sign-out-alt"></i>
                     <strong>ログアウト</strong>
                   <% end %>
                 </li>
@@ -52,7 +57,7 @@
             </div>
           <% elsif admin_signed_in? %>
             <a class="navbar-brand" href="/admin">
-              <%= image_tag('sweets_logo.jpg') %>
+              <%= image_tag('logo.png') %>
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -61,26 +66,31 @@
               <ul class="navbar-nav ml-auto">
                 <li>
                   <%= link_to admin_items_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-user"></i>
                     <strong>商品一覧</strong>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to new_admin_item_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-birthday-cake"></i>
                     <strong>商品新規登録</strong>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to admin_customers_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-users"></i>
                     <strong>会員一覧</strong>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to admin_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-history"></i>
                     <strong>注文履歴一覧</strong>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to destroy_admin_session_path, method: :delete, class:"nav-link text-light" do %>
+                    <i class="fas fa-sign-out-alt"></i>
                     <strong>ログアウト</strong>
                   <% end %>
                 </li>
@@ -88,7 +98,7 @@
             </div>
           <% else %>
             <a class="navbar-brand" href="/">
-              <%= image_tag('sweets_logo.jpg') %>
+              <%= image_tag('logo.png') %>
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -97,21 +107,25 @@
               <ul class="navbar-nav ml-auto">
                 <li>
                   <%= link_to about_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-store-alt"></i>
                     <strong>About</strong>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to items_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-birthday-cake"></i>
                     <strong>商品一覧</strong>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to new_customer_registration_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-user-plus"></i>
                     <strong>新規登録</strong>
                   <% end %>
                 </li>
                 <li>
                   <%= link_to customer_session_path, class:"nav-link text-light" do %>
+                    <i class="fas fa-sign-in-alt"></i>
                     <strong>ログイン</strong>
                   <% end %>
                 </li>

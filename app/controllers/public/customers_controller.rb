@@ -1,5 +1,6 @@
 class Public::CustomersController < ApplicationController
-  before_action :current_customer, {only: [:show, :edit]}
+  before_action :authenticate_customer!
+
   def show
     @customer = current_customer
   end
@@ -11,7 +12,7 @@ class Public::CustomersController < ApplicationController
   def update
     @customer = current_customer
     if @customer.update(customer_params)
-      redirect_to customers_confirm_path
+      redirect_to customers_confirm_path, notice: 'You have updated user info successfully.'
     else
       render :edit
     end
@@ -25,7 +26,7 @@ class Public::CustomersController < ApplicationController
     @customer = current_customer
     @customer.update(is_valid: false)
     reset_session
-    redirect_to root_path
+    redirect_to root_path, notice: 'Thank you for the good rating. We hope to see you again.'
   end
 
   private

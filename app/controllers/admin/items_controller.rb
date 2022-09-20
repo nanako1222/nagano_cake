@@ -1,4 +1,6 @@
 class Admin::ItemsController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
     @item = Item.new
     @items = Item.page(params[:page])
@@ -11,7 +13,7 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to admin_items_path
+      redirect_to admin_items_path, notice: 'Product was successfully created'
     else
       render :new
     end
@@ -29,9 +31,9 @@ class Admin::ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
-      redirect_to admin_item_path(@item.id), notice: 'You have updated book successfully.'
+      redirect_to admin_item_path(@item.id), notice: 'Product was successfully updated'
     else
-      render :edit
+      render :show
     end
   end
 

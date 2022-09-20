@@ -1,5 +1,8 @@
 <div class="container">
   <div class="row">
+    <% if flash[:notice] %>
+      <%= notice %>
+    <% end %>
     <h4 class="col-2 mt-5 offset-2">商品詳細</h4>
   </div>
   <div class="row mt-4 offset-2">

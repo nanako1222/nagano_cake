@@ -1,4 +1,6 @@
 class Admin::CustomersController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
     @customer = Customer.new
     @customers = Customer.page(params[:page])
@@ -14,7 +16,7 @@ class Admin::CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
-      redirect_to admin_customer_path, notice: 'You have updated book successfully.'
+      redirect_to admin_customer_path, notice: 'Customer was successfully updated'
     else
       render :edit
     end
