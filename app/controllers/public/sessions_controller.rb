@@ -30,6 +30,11 @@ class Public::SessionsController < Devise::SessionsController
         end
       end
     end
+    
+    private
+    def customer_params
+      params.require(:customer).permit(:last_name, :first_name, :first_name_kana, :last_name_kana, :password_confirmation, :postal_code, :adress, :telephone_number)
+    end
 
       # # ture && true
       # if @customer && @customer.valid_password?(params[:customer][:password]) && !@customer.is_active

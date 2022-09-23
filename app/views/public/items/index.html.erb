@@ -9,9 +9,13 @@
           <div class="col-4">
             <p class ="p_1">
               <% if item.image.attached? %>
-                <%= image_tag item.get_image(100,100) %>
+                <%= link_to item_path(item) do %>
+                  <%= image_tag item.get_image(100,100) %>
+                <% end %>
               <% else %>
-                <%= image_tag 'default-image.jpg', size: "100x100" %>
+                <%= link_to item_path(item) do %>
+                  <%= image_tag 'default-image.jpg', size: "100x100" %>
+                <% end %>
               <% end %>
             </p>
             <p class ="p_1"><%= link_to item.name, item_path(item.id) %></p>

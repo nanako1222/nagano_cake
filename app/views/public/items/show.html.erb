@@ -39,7 +39,7 @@
         <h5><strong><%= @item.name %></strong></h5>
         <div class="mt-3"><%= @item.introduction %></div>
           <!--<th>税込価格</th>-->
-        <div class="mt-5"><strong class="price"><%= "¥#{@item.price}" %></strong><span>（税込）</span></div>
+        <div class="mt-5"><span>税抜価格（税込価格）</span><br><strong class="price"><%= "#{@item.price}円" %>(<%= "#{@item.with_tax_price}円" %>)　</strong></div>
 
         <div class="mt-3">
           <%= form_with model: @cart_item, url:cart_items_path, method: :post do |f| %>

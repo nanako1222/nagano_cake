@@ -36,6 +36,7 @@ get '/about' => 'public/homes#about'
     get "/customers/confirm" => "customers#confirm"
     patch '/customers/out' => 'customers#out'
     resources :sessions, only: [:destroy, :new, :create]
+    post "/customers" => "customers#create"
     resources :registrations, only: [:new, :create]
     resources :items, only: [:index, :show]
   end

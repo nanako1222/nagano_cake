@@ -3,7 +3,7 @@
     <div class="col-md-11 offset-1">
       <h4 class="col-3 mt-5">新規会員登録</h4>
 
-      <%= form_with model: @customer, url: new_customer_session_path, id: 'new_customer', class: 'new_customer', local: true do  |f| %>
+      <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', class: 'new_customer', local: true do  |f| %>
         <%= render "public/shared/error_messages", resource: resource %>
 
         <div class="row field d-grid text-center mt-3 mt-4">
@@ -35,7 +35,7 @@
 
         <div class="row field d-grid text-center mt-3">
           <%= f.label :住所, class: "col-md-4 text-left" %>
-          <%= f.text_field :adress, autofocus: true, class: "col-md-7" %>
+          <%= f.text_field :address, autofocus: true, class: "col-md-7" %>
         </div>
 
         <div class="row field d-grid text-center mt-3">
