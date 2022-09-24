@@ -12,7 +12,7 @@ class Public::CustomersController < ApplicationController
   def update
     @customer = current_customer
     if @customer.update(customer_params)
-      redirect_to customers_my_page_path, notice: 'You have updated user info successfully.'
+      redirect_to customers_my_page_path, notice: 'ユーザー情報の変更に成功しました'
     else
       render :edit
     end
@@ -26,7 +26,7 @@ class Public::CustomersController < ApplicationController
     @customer = current_customer
     @customer.update(is_valid: false)
     reset_session
-    redirect_to root_path, notice: 'Thank you for the good rating. We hope to see you again.'
+    redirect_to root_path
   end
 
   private

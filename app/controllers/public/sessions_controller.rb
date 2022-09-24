@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Public::SessionsController < Devise::SessionsController
   before_action :customer_state, only: [:create]
   # before_action :configure_sign_in_params, only: [:create]
@@ -30,7 +28,7 @@ class Public::SessionsController < Devise::SessionsController
         end
       end
     end
-    
+
     private
     def customer_params
       params.require(:customer).permit(:last_name, :first_name, :first_name_kana, :last_name_kana, :password_confirmation, :postal_code, :adress, :telephone_number)
@@ -44,7 +42,6 @@ class Public::SessionsController < Devise::SessionsController
       # if @customer && !(@customer.valid_password?(params[:customer][:password]) && !@customer.is_active)
       #   redirect_to new_user_session_path
       # end
-
 end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

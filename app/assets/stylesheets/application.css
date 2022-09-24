@@ -113,3 +113,10 @@ footer {
   margin-bottom: 0;
 }
 
+.customer_valid{
+  color: gray;
+}
+
+.customer_valid2{
+  color: green;
+}

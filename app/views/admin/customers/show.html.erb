@@ -34,6 +34,16 @@
           <th>メールアドレス</th>
           <td><%= @customer.email %></td>
         </tr>
+        <tr>
+          <th>退会ステーサス</th>
+          <td>
+            <% if @customer.is_valid == false %>
+              <p class="customer_valid">退会</p>
+            <% else %>
+              <p class="customer_valid2">有効</p>
+            <% end %>
+          </td>
+        </tr>
       </table>
       <span class = "customer_edit">
         <%= link_to "編集する", edit_admin_customer_path(@customer), class:"btn btn-success"%>

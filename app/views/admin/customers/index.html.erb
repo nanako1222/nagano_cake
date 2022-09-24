@@ -8,6 +8,7 @@
           <th>会員ID</th>
           <th>氏名</th>
           <th>メールアドレス</th>
+          <th>退会ステーサス</th>
         </thead>
         <tbody>
           <% @customers.each do |customer| %>
@@ -15,6 +16,13 @@
               <td><%= customer.id %></td>
               <td><%= link_to customer.full_name, admin_customer_path(customer.id) %></td>
               <td><%= customer.email %></td>
+              <td>
+                <% if customer.is_valid == false %>
+                  <p class="customer_valid">退会</p>
+                <% else %>
+                  <p class="customer_valid2">有効</p>
+                <% end %>
+              </td>
             </tr>
           <% end %>
           <%= paginate @customers %>

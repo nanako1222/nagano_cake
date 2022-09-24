@@ -8,5 +8,5 @@
 
 <div class="mt-4 text-center">
   <%= link_to "退会しない", customers_my_page_path(@customer), class:"btn btn-primary"%>
-  <%= link_to "退会する", customers_out_path(@customer), method: :patch, class:"btn btn-danger ml-5"%>
+  <%= link_to "退会する", customers_out_path(@customer),"data-confirm" => "本当に退会しますか？", method: :patch, class:"btn btn-danger ml-5"%>
 </div>
