@@ -120,3 +120,7 @@ footer {
 .customer_valid2{
   color: green;
 }
+
+.item_image{
+  object-fit: cover;
+}

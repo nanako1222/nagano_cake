@@ -18,15 +18,17 @@
           <% @items.each do |item| %>
             <div class="col-3">
               <p class ="p_1">
-                <% if item.image.attached? %>
-                  <%= link_to item_path(item) do %>
-                    <%= image_tag item.get_image(100,100) %>
+                <div class="item_image">
+                  <% if item.image.attached? %>
+                    <%= link_to item_path(item) do %>
+                      <%= image_tag item.get_image(100,100) %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to item_path(item) do %>
+                      <%= image_tag 'default-image.jpg', size: "100x100" %>
+                    <% end %>
                   <% end %>
-                <% else %>
-                  <%= link_to item_path(item) do %>
-                    <%= image_tag 'default-image.jpg', size: "100x100" %>
-                  <% end %>
-                <% end %>
+                </div>
               </p>
               <p class ="p_1"><%= link_to item.name, item_path(item.id) %></p>
               <p class ="p_1"><%= "¥#{item.price}" %></p>

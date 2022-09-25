@@ -7,23 +7,27 @@
   </div>
   <div class="row mt-4 offset-2">
       <table class="table table-hover table-inverse mt-4 ml-4 col-md-6">
-        <% if @item.image.attached? %>
-          <%= image_tag @item.get_image(200,200) %>
-        <% else %>
-          <%= image_tag 'default-image.jpg', size: "200x200" %>
-        <% end %>
-        <tr>
-          <th>商品名</th>
-          <td><%= @item.name %></td>
-        </tr>
-        <tr>
-          <th>商品説明</th>
-          <td><%= @item.introduction %></td>
-        </tr>
-        <tr>
-          <th>税込価格（税抜価格）</th>
-          <td><%= "#{@item.with_tax_price}円" %>(<%= "#{@item.price}円" %>)</td>
-        </tr>
+        <div class="item_image mt-4">
+          <% if @item.image.attached? %>
+            <%= image_tag @item.get_image(200,200) %>
+          <% else %>
+            <%= image_tag 'default-image.jpg', size: "200x200" %>
+          <% end %>
+        </div>
+        <div>
+          <tr>
+            <th>商品名</th>
+            <td><%= @item.name %></td>
+          </tr>
+          <tr>
+            <th>商品説明</th>
+            <td><%= @item.introduction %></td>
+          </tr>
+          <tr>
+            <th>税込価格（税抜価格）</th>
+            <td><%= "#{@item.with_tax_price}円" %>(<%= "#{@item.price}円" %>)</td>
+          </tr>
+        </div>
       </table>
   </div>
   <div class="row offset-6">
