@@ -22,9 +22,9 @@ class Public::SessionsController < Devise::SessionsController
       @customer = Customer.find_by(email: params[:customer][:email])
       if @customer
         if @customer.valid_password?(params[:customer][:password]) && !@customer.is_valid
-          redirect_to new_user_session_path
+          redirect_to new_customer_session_path, notice: 'こちらのユーザーは既に退会済みです'
         # else
-        #   redirect_to root_path
+        #   redirect_to new_customer_session_path, notice: 'こちらのユーザーは既に退会済みです'
         end
       end
     end
